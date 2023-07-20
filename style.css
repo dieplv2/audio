@@ -3,23 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 ul {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
+
 .flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2em;
 }
+
 .container {
     width: 95%;
     max-width: 100%;
     margin: 0 auto;
 }
+
 .active {
     color: blue;
 }
@@ -31,20 +36,22 @@ a {
 /* nav-list */
 
 .nav {
-    background-image:url(./img/Lay.png) ,url(./img/bg-slider.png), url(./img/bg.png), url(./img/bg-1.png);
-    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
-    background-position: center,center,center,center,;
+    background-image: url(./img/Lay.png), url(./img/bg-slider.png), url(./img/bg.png), url(./img/bg-1.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: center, center, center, center, ;
     background-size: cover;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .nav-list {
     height: 60px;
     padding: 0 20px;
 }
+
 .logo {
     padding: 0 20px;
 }
+
 .nav-list li a {
     text-transform: uppercase;
     font-weight: 700;
@@ -56,6 +63,7 @@ a {
     display: block;
 
 }
+
 .nav-list li a:hover {
     opacity: 1;
 }
@@ -68,15 +76,16 @@ a {
     align-items: center;
     text-transform: uppercase;
     position: relative;
+    padding: 20px 0;
 }
 
-.titlepage span::after{
+.titlepage span::after {
     content: "";
     display: table;
     box-sizing: content-box;
     margin: 0 auto;
-    width: 9.375em;
-    height: 9.375em;
+    width: 7.375em;
+    height: 7.375em;
     border: 10px solid #e7e7e7;
     border-radius: 6.25em;
 }
@@ -101,8 +110,8 @@ a {
 }
 
 .titele-sound .btn-slider {
-   display: block;
-   width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .titele-sound .btn-slider button {
@@ -151,18 +160,20 @@ a {
     content: "";
     clear: both;
     display: table;
-  }
+}
 
 .cat-list li {
     float: left;
     width: 25%;
+    max-width: 100%;
+    display: block;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     padding: 8px 0;
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
 
-.cat-list li:hover a{
+.cat-list li:hover a {
     color: blue;
 }
 
@@ -176,53 +187,138 @@ a {
 }
 
 /* topring-list */
+
+.topring-list {
+    background-color: #fff;
+    padding: 20px;
+}
+
 .topring-list li {
     width: 20%;
     text-align: center;
     display: block;
-    border: 1px solid;
-    min-height: 200px;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+.controller {
     background-color: #053a80;
-    padding-top: 30px;
-}
-
-
-.controller span {
+    width: 100%;
     display: block;
-    margin: 0 auto;
-    float: left;
-    width: 33.333%;
-    height: auto;
+    border-radius: 4px;
     padding: 10px 0;
-    overflow: hidden;
+    color: #fff;
+}
+
+.controller i {
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 30px;
+}
+
+.controller i:nth-child(2) {
     font-size: 30px;
+    padding: 10px 0;
+}
+.controller input{
+    display: block;
+    width: 100%;
 }
 
-/* Reponseve */
-
-@media only screen and (max-width: 800px) {
-    .titele-sound .btn-slider{
-        display: none;
-    }
-
-    .dowload {
-        width: 95%;
-    }
-
-    /* cat-list */
-    .cat-list li {
-        width: 50%;
-    }
+.title-song {
+    padding: 20px 0;
+    border-radius: 0 0 4px 4px;
 }
+
+.footer-song {
+    background-color: #f7f7f7;
+    padding: 7px 0;
+    border-radius: 0 0 4px 4px;
+}
+
+/* top Ring */
+.hotring {
+    background-color: #f7f7f7;
+}
+.playing {
+    width: 65%;
+    height: 50vh;
+    background-image: url(./img/Layer\ 40.png);
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+    position: relative;
+}
+
+.play-item {
+    background-color: #053a80;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    top: calc(100% - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.hot-list {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.hot-list li {
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+.hot-list li:nth-child(even) {
+    background-color: #fff;
+}
+
+.best {
+    background-image: url(./img/bg2.png), url(./img/bg1.png);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.best-list {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.best-list li {
+    width: 45%;
+    float: left;
+    color: #fff;
+    background-color: #2b609b;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: center;
+}
+.play-items {
+    background-color: #2b609b;
+    padding: 15px 0;
+    text-align: center;
+}
+/* Reponsive */
 
 @media only screen and (max-width: 1000px) {
     .nav-list li:not(:last-child) {
         display: none;
     }
+
     .icon {
         display: block;
         cursor: pointer;
     }
+
     .nav-top {
         position: relative;
         height: 60px;
@@ -234,9 +330,74 @@ a {
         top: 60px;
         display: block;
     }
+
     .nav-list.reponsive li {
         display: block;
         padding: 7px 12px;
         height: 100%;
     }
+
+    /* Category */
+
+    .cat-list li {
+        width: 33.333%;
+    }
+
+    /* topring-list */
+
+    .topring-list li:last-child {
+        display: none;
+    }
+
+    .topring-list li {
+        width: 33.333%;
+    }
 }
+    /* Reponseve */
+
+    @media only screen and (max-width: 800px) {
+        .titele-sound .btn-slider {
+            display: none;
+        }
+
+        .dowload {
+            width: 95%;
+        }
+
+        /* cat-list */
+        .cat-list li {
+            width: 50%;
+        }
+
+        /* Top ring */
+
+        .topring-list li:first-child {
+            display: none;
+        }
+
+        .topring-list li {
+            width: 50%;
+        }
+
+        /* playing */
+        .playing,.hot-list{
+            width: 100%;
+        }
+
+        .play-item {
+            gap: 0.4em;
+        }
+
+        .hot-list li {
+            gap: 1em;
+        }
+
+        /* best-list */
+
+        .best-list li {
+            float: none;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
