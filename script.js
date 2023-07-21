@@ -1,188 +1,259 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-
 const App = {
     // Menu top
+    data: {
+        navs: [
+            {
+                id: 1,
+                name: "Home",
+                cerated_at: "2023/7",
+                updated_at: "2023/7",
+            },
+            {
+                id: 2,
+                name: "About",
+                cerated_at: "2023/7",
+                updated_at: "2023/7",
+            },
+            {
+                id: 1,
+                name: "Sevice",
+                cerated_at: "2023/7",
+                updated_at: "2023/7",
+            },
+            {
+                id: 1,
+                name: "Contact",
+                cerated_at: "2023/7",
+                updated_at: "2023/7",
+            },
+            {
+                id: 1,
+                name: ' <i class="fas fa-search"></i>',
+                cerated_at: "2023/7",
+                updated_at: "2023/7",
+            },
+        ],
+        buttons: [
+            {
+                id: 1,
+                name: "open",
+                created_at: "2023/7",
+                updated_at: "none",
+            },
+            {
+                id: 2,
+                name: "Cut",
+                created_at: "2023/7",
+                updated_at: "none",
+            },
+            {
+                id: 3,
+                name: "save",
+                created_at: "2023/7",
+                updated_at: "none",
+            },
+        ],
 
-    navs: [
-        {
-            id: 1,
-            name: "Home",
-            cerated_at: "2023/7",
-            updated_at: "2023/7",
-        },
-        {
-            id: 2,
-            name: "About",
-            cerated_at: "2023/7",
-            updated_at: "2023/7",
-        },
-        {
-            id: 1,
-            name: "Sevice",
-            cerated_at: "2023/7",
-            updated_at: "2023/7",
-        },
-        {
-            id: 1,
-            name: "Contact",
-            cerated_at: "2023/7",
-            updated_at: "2023/7",
-        },
-        {
-            id: 1,
-            name: ' <i class="fas fa-search"></i>',
-            cerated_at: "2023/7",
-            updated_at: "2023/7",
-        },
-    ],
+        songs: [
+            {
+                name: "A loi",
+                path: "./music/ALoi-Double2TMasew-10119691.mp3",
+                Singer: "Double2T",
+                Views: 1234578,
+            },
 
-    // Sound cloud btn
-    btnTop: [
-        {
-            number: 1,
-            title: "open"
-        },
-        {
-            number: 2,
-            title: "Cut"
-        },
-        {
-            number: 3,
-            title: "save"
-        },
-    ],
+            {
+                name: "Cau chuyen dau nam",
+                path: "./music/CauChuyenDauNam-TruongNhatSinh_3cmyj.mp3",
+                Singer: "Truong Nhat Sinh",
+                Views: 952421,
+            },
 
-    // Render category
-    categories: [
-        {
-            img: './img/play.png',
-            name: 'LamLo',
-            path: "./music/LamLo-LeQuyen_37mvj.mp3",
-        },
+            {
+                name: "Ma lum dong tien",
+                path: "./music/MaLumDongTien-ThanhLan-2433730.mp3",
+                Singer: "Thanh Lam",
+                Views: 52478,
+            },
 
-        {
-            img: './img/play.png',
-            name: 'HoaNoVeDem',
-            path: "./music/HoaNoVeDem-LeQuyen-3816892.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'HaNoiMuaVangNhungConMua',
-            path: "./music/HaNoiMuaVangNhungConMua-LeQuyen_4dajf.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'ConTimDaiKho',
-            path: "./music/ConTimDaiKho-LeQuyen-2761644.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'BienCan',
-            path: "./music/BienCan-LeQuyen-2454236.mp3",
-        },
+            {
+                name: "Ong ba anh",
+                path: "./music/OngBaAnhParody-LEG-4708046.mp3",
+                Singer: "Length",
+                Views: 9872,
+            },
 
-        {
-            img: './img/play.png',
-            name: 'BaiKhongTenSo5',
-            path: "./music/BaiKhongTenSo5-LeQuyen-3652851.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'LamLo',
-            path: "./music/LamLo-LeQuyen_37mvj.mp3",
-        },
+        ],
+        songBasics: [
+            {
+                img: './img/play.png',
+                name: 'LamLo',
+                path: "./music/LamLo-LeQuyen_37mvj.mp3",
+                id: 1,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
 
-        {
-            img: './img/play.png',
-            name: 'HoaNoVeDem',
-            path: "./music/HoaNoVeDem-LeQuyen-3816892.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'HaNoiMuaVangNhungConMua',
-            path: "./music/HaNoiMuaVangNhungConMua-LeQuyen_4dajf.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'ConTimDaiKho',
-            path: "./music/ConTimDaiKho-LeQuyen-2761644.mp3",
-        },
-        {
-            img: './img/play.png',
-            name: 'BienCan',
-            path: "./music/BienCan-LeQuyen-2454236.mp3",
-        },
+            {
+                img: './img/play.png',
+                name: 'HoaNoVeDem',
+                path: "./music/HoaNoVeDem-LeQuyen-3816892.mp3",
+                id: 2,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'HaNoiMuaVangNhungConMua',
+                path: "./music/HaNoiMuaVangNhungConMua-LeQuyen_4dajf.mp3",
+                id: 3,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'ConTimDaiKho',
+                path: "./music/ConTimDaiKho-LeQuyen-2761644.mp3",
+                id: 4,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'BienCan',
+                path: "./music/BienCan-LeQuyen-2454236.mp3",
+                id: 5,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
 
-        {
-            img: './img/play.png',
-            name: 'BaiKhongTenSo5',
-            path: "./music/BaiKhongTenSo5-LeQuyen-3652851.mp3",
-        },
+            {
+                img: './img/play.png',
+                name: 'BaiKhongTenSo5',
+                path: "./music/BaiKhongTenSo5-LeQuyen-3652851.mp3",
+                id: 6,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'LamLo',
+                path: "./music/LamLo-LeQuyen_37mvj.mp3",
+                id: 7,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
 
+            {
+                img: './img/play.png',
+                name: 'HoaNoVeDem',
+                path: "./music/HoaNoVeDem-LeQuyen-3816892.mp3",
+                id: 8,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'HaNoiMuaVangNhungConMua',
+                path: "./music/HaNoiMuaVangNhungConMua-LeQuyen_4dajf.mp3",
+                id: 9,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'ConTimDaiKho',
+                path: "./music/ConTimDaiKho-LeQuyen-2761644.mp3",
+                id: 10,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+            {
+                img: './img/play.png',
+                name: 'BienCan',
+                path: "./music/BienCan-LeQuyen-2454236.mp3",
+                id: 11,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
 
+            {
+                img: './img/play.png',
+                name: 'BaiKhongTenSo5',
+                path: "./music/BaiKhongTenSo5-LeQuyen-3652851.mp3",
+                id: 12,
+                views: 123457,
+                dowload: 10023,
+                share: 982,
+            },
+        ],
 
-    ],
+    },
 
-    // Render song
-    songs: [
-        {
-            name: "A loi",
-            path: "./music/ALoi-Double2TMasew-10119691.mp3",
-            Singer: "Double2T",
-            Views: 1234578,
-        },
-
-        {
-            name: "Cau chuyen dau nam",
-            path: "./music/CauChuyenDauNam-TruongNhatSinh_3cmyj.mp3",
-            Singer: "Truong Nhat Sinh",
-            Views: 952421,
-        },
-
-        {
-            name: "Ma lum dong tien",
-            path: "./music/MaLumDongTien-ThanhLan-2433730.mp3",
-            Singer: "Thanh Lam",
-            Views: 52478,
-        },
-
-        {
-            name: "Ong ba anh",
-            path: "./music/OngBaAnhParody-LEG-4708046.mp3",
-            Singer: "Length",
-            Views: 9872,
-        },
-
-    ],
+    // defined variable common
+    definedVariable: htmls = '',
 
     // Render html
     render: function () {
         // render navbar top
-        const navs = this.navs.map(function (nav) {
-            return `<li><a href="">${nav.name}</a></li>`
+        this.htmls = this.data.navs.map(function (nav) {
+            return `<li class="active"><img src="" alt=""><a href="">${nav.name}</a></li>`
         })
-        $(".nav-list").innerHTML = navs.join('');
-        // render Button
-        const btnTop = this.btnTop.map(function (btn) {
-            return `
-                <button class="active">${btn.number}${btn.title}</button>
-            `
-        })
-        $(".btntop").innerHTML = btnTop.join("");
+        $(".nav-list").innerHTML = this.htmls.join("");
 
-        // render Categories
-        const cat = this.categories.map(function (category) {
-            return `
-                <li class="active"><img src="${category.img}" alt=""><a href="">${category.name}</a></li>
-            `
+        // render button
+        this.htmls = this.data.buttons.map(function (button) {
+            return `<button>${button.id}${button.name}</button>`
         })
-        $(".cat-list").innerHTML = cat.join("");
+        $(".btntop").innerHTML = this.htmls.join("");
+        // render Song Basics
+        this.htmls = this.data.songBasics.map(function (basic) {
+            return `<li><img src="${basic.img}"><a href="">${basic.name}</a></li>`
+        })
+        $(".cat-list").innerHTML = this.htmls.join("");
+
+        // Hot ring
+        this.htmls = this.data.songBasics.map(function (basic) {
+            return `
+                <tr>
+                    <td>${basic.id}</td>
+                    <td>${basic.name}</td>
+                    <td>${basic.id}</td>
+                    <td>4</td>
+                    <td>${basic.views}</td>
+                    <td>${basic.dowload}</td>
+                    <td>${basic.share}</td>
+                    <td>${basic.id}</td>
+                    <td>9</td>
+                </tr>`
+        })
+        // <span>${basic.id}</span>
+        // <span>${basic.name}</span>
+        // <span>${basic.id}</span>
+        // <span>00.00</span>
+        // <span>${basic.views}</span>
+        // <span>${basic.dowload}</span>
+        // <span>${basic.share}</span>
+        // <span>${basic.id}</span>
+
+        $(".hot-list").innerHTML = this.htmls.join("");
 
         // List Top Ring
-
-        const htmls = this.songs.map(function (song) {
+        this.htmls = this.data.songs.map(function (song) {
             return `
                 <li>
                 <div class="controller">
@@ -206,7 +277,7 @@ const App = {
             </li>
                 `
         })
-        $(".topring-list").innerHTML = htmls.join(" ");
+        $(".topring-list").innerHTML = this.htmls.join(" ");
     },
 
     // Xu ly su kien
@@ -239,15 +310,15 @@ const App = {
 
         let slideIndex = 1;
         showSlides(slideIndex);
- 
+
         function plusCart(n) {
             showSlides(slideIndex += n)
         }
-        console.log($(".prev"));
+
 
         function showSlides(n) {
-            if(n > slides.length){slideIndex = 1};
-            if(n < 1){slideIndex = slideIndex.length}
+            if (n > slides.length) { slideIndex = 1 };
+            if (n < 1) { slideIndex = slideIndex.length }
 
             slides.forEach(function (current, index) {
                 if ($(".container").offsetWidth < 800) {
@@ -255,7 +326,7 @@ const App = {
                 }
             })
 
-            slides[slideIndex-1].style.display = 'block';
+            slides[slideIndex - 1].style.display = 'block';
         }
 
 
@@ -263,6 +334,7 @@ const App = {
 
     // Stats App
     stats: function () {
+
         this.render()
         this.handleEvents()
     },

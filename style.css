@@ -51,7 +51,7 @@ a {
     right: 0;
 }
 
-.nav-top.sticky{
+.nav-top.sticky {
     background-color: #2b609b;
 }
 
@@ -84,7 +84,6 @@ a {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    position: relative;
     padding: 60px 0;
 }
 
@@ -106,13 +105,15 @@ a {
 
 /* titele-sound */
 
-.slider-top{
+.slider-top {
     position: relative;
-    min-height: 400px;
+    width: 100%;
+    height: 100vh;
 }
+
 .slider-top h2 {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     right: 0;
     text-transform: uppercase;
@@ -124,7 +125,7 @@ a {
 
 .btntop {
     position: absolute;
-    top: 65%;
+    top: 50%;
     left: 0;
     right: 0;
     display: block;
@@ -159,7 +160,7 @@ a {
     background-color: #2b609b;
     padding: 15px 0;
     display: block;
-    margin:  0 auto;
+    margin: 0 auto;
 }
 
 .dowload .btn-dowload small {
@@ -217,25 +218,31 @@ a {
 /* topring-list */
 .topring {
     position: relative;
-    z-index: -1;
+    width: 100wv;
+    height: 100vh;
+    z-index: -10;
 }
 
 .topring-list {
-    background-color: #fff;
-    padding: 20px;
     overflow: hidden;
-    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.topring .prev, .topring .next {
+.prev,
+.next {
     position: absolute;
-    top: 75%;
-    background-color: #053a80;
-    padding: 10px 5px;
-    color: #fff;
+    top: 0;
+    bottom: 0;
+    color: #555;
     cursor: pointer;
+    border: none;
+    background-color: #fff;
 }
-button.prev {
+.prev {
     left: 0;
     cursor: pointer;
 }
@@ -245,12 +252,13 @@ button.prev {
 }
 
 .topring-list li {
-    width: 20%;
+    width: 23%;
     text-align: center;
     display: block;
     border-top: none;
     border-radius: 0 0 4px 4px;
 }
+
 .controller {
     background-color: #053a80;
     width: 100%;
@@ -270,19 +278,22 @@ button.prev {
     font-size: 30px;
     padding: 10px 0;
 }
-.controller input{
+
+.controller input {
     display: block;
     width: 100%;
 }
 
 .title-song {
-    padding: 20px 0;
+    padding: 25px 0;
     border-radius: 0 0 4px 4px;
+    background-color: #e7e7e7;
+    font-size: 1.2em;
 }
 
 .footer-song {
     background-color: #f7f7f7;
-    padding: 7px 0;
+    padding: 15px 0;
     border-radius: 0 0 4px 4px;
 }
 
@@ -290,6 +301,7 @@ button.prev {
 .hotring {
     background-color: #f7f7f7;
 }
+
 .playing {
     width: 70%;
     height: 50vh;
@@ -314,24 +326,26 @@ button.prev {
     gap: 2em;
 }
 
-.hot-list {
+/* Table */
+
+table {
+    border-collapse: collapse;
     width: 70%;
     margin: 0 auto;
 }
 
-.hot-list li {
-    width: 100%;
-    padding: 8px 0;
-    margin-bottom: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3em;
+th,
+td {
     font-size: 1.1em;
+    text-align: left;
+    padding: 8px 0;
 }
-.hot-list li:nth-child(even) {
-    background-color: #fff;
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
+
+/* Best */
 
 .best {
     background-image: url(./img/bg2.png), url(./img/bg1.png);
@@ -354,17 +368,20 @@ button.prev {
     margin-left: 5px;
     text-align: center;
 }
+
 .play-items {
     background-color: #2b609b;
     padding: 15px 0;
     text-align: center;
 }
+
 /* Reponsive */
 
 @media only screen and (max-width: 1000px) {
     .nav {
         height: 100vh;
     }
+
     .nav-top {
         position: relative;
         padding: 10px 0;
@@ -380,6 +397,7 @@ button.prev {
         left: 0;
         right: 0;
     }
+
     .nav-list li {
         margin-top: 5px;
         width: 100%;
@@ -421,58 +439,59 @@ button.prev {
     }
 
     /* hotring */
-    .playing, .hot-list {
+    .playing,
+    .hot-list {
         width: 100%;
     }
-    
+
     .hot-list li {
         width: 100%;
         font-size: 1.1em;
     }
 
 }
-    /* Reponseve */
 
-    @media only screen and (max-width: 800px) {
-        .titele-sound .btn-slider {
-            display: none;
-        }
+/* Reponseve */
 
-        .dowload {
-            width: 95%;
-        }
-
-        /* cat-list */
-        .cat-list li {
-            width: 100%;
-        }
-
-        /* Top ring */
-        .topring-list li {
-            width: 90%;
-            margin: 0 auto;
-            height: 50vh;
-        }
-
-        /* playing */
-        .playing,.hot-list{
-            width: 100%;
-        }
-
-        .play-item {
-            gap: 0.4em;
-        }
-
-        .hot-list li {
-            gap: 1em;
-        }
-
-        /* best-list */
-
-        .best-list li {
-            float: none;
-            width: 100%;
-            overflow: hidden;
-        }
+@media only screen and (max-width: 800px) {
+    .titele-sound .btn-slider {
+        display: none;
     }
 
+    .dowload {
+        width: 95%;
+    }
+
+    /* cat-list */
+    .cat-list li {
+        width: 100%;
+    }
+
+    /* Top ring */
+    .topring-list li {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* playing */
+    .playing,
+    .hot-list {
+        width: 100%;
+    }
+
+    .play-item {
+        gap: 0.4em;
+    }
+
+    .hot-list li {
+        gap: 1em;
+    }
+
+    /* best-list */
+
+    .best-list li {
+        float: none;
+        width: 100%;
+        overflow: hidden;
+    }
+}
