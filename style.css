@@ -14,6 +14,7 @@ a {
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 2em;
@@ -40,13 +41,25 @@ a {
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: center, center, center, center, ;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav-top.sticky{
+    background-color: #2b609b;
 }
 
 .nav-list {
     height: 60px;
     padding: 0 20px;
 }
+
 
 .logo {
     padding: 0 20px;
@@ -59,10 +72,6 @@ a {
     opacity: .8;
 }
 
-.nav-list li:last-child {
-    display: block;
-
-}
 
 .nav-list li a:hover {
     opacity: 1;
@@ -96,18 +105,28 @@ a {
 
 
 /* titele-sound */
-h1.titletop {
-    color: #fff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+
+.slider-top{
+    position: relative;
+    min-height: 400px;
+}
+.slider-top h2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
     text-transform: uppercase;
+    color: #fff;
     font-size: 3em;
+    text-align: center;
 }
 
+
 .btntop {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    right: 0;
     display: block;
     text-align: center;
 }
@@ -154,8 +173,11 @@ h1.titletop {
     background-color: #f7f7f7;
     margin: 0;
     overflow: hidden;
+    z-index: -10;
+    position: relative;
 }
 
+/* Cat list */
 .clearfix::after {
     content: "";
     clear: both;
@@ -187,14 +209,39 @@ h1.titletop {
     font-size: 1em;
     font-weight: 600;
     opacity: .8;
+    display: inline-block;
+    line-height: 8px;
     color: #000;
 }
 
 /* topring-list */
+.topring {
+    position: relative;
+    z-index: -1;
+}
 
 .topring-list {
     background-color: #fff;
     padding: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.topring .prev, .topring .next {
+    position: absolute;
+    top: 75%;
+    background-color: #053a80;
+    padding: 10px 5px;
+    color: #fff;
+    cursor: pointer;
+}
+button.prev {
+    left: 0;
+    cursor: pointer;
+}
+.next {
+    right: 0;
+    cursor: pointer;
 }
 
 .topring-list li {
@@ -244,7 +291,7 @@ h1.titletop {
     background-color: #f7f7f7;
 }
 .playing {
-    width: 65%;
+    width: 70%;
     height: 50vh;
     background-image: url(./img/Layer\ 40.png);
     background-position: center;
@@ -268,7 +315,7 @@ h1.titletop {
 }
 
 .hot-list {
-    width: 65%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -280,6 +327,7 @@ h1.titletop {
     justify-content: center;
     align-items: center;
     gap: 3em;
+    font-size: 1.1em;
 }
 .hot-list li:nth-child(even) {
     background-color: #fff;
@@ -315,7 +363,7 @@ h1.titletop {
 
 @media only screen and (max-width: 1000px) {
     .nav {
-        height: 50vh;
+        height: 100vh;
     }
     .nav-top {
         position: relative;
@@ -328,17 +376,19 @@ h1.titletop {
         width: 100%;
         height: auto;
         position: absolute;
-        left: 0;
         top: 100%;
+        left: 0;
+        right: 0;
     }
     .nav-list li {
         margin-top: 5px;
         width: 100%;
         display: block;
         padding: 5px 12px;
+        text-align: center;
     }
 
-    .nav-list li:not(:last-child) {
+    .nav-list li {
         display: none;
     }
 
@@ -366,13 +416,20 @@ h1.titletop {
 
     /* topring-list */
 
-    .topring-list li:last-child {
-        display: none;
+    .topring-list li {
+        width: 25%;
     }
 
-    .topring-list li {
-        width: 33.333%;
+    /* hotring */
+    .playing, .hot-list {
+        width: 100%;
     }
+    
+    .hot-list li {
+        width: 100%;
+        font-size: 1.1em;
+    }
+
 }
     /* Reponseve */
 
@@ -387,17 +444,14 @@ h1.titletop {
 
         /* cat-list */
         .cat-list li {
-            width: 50%;
+            width: 100%;
         }
 
         /* Top ring */
-
-        .topring-list li:first-child {
-            display: none;
-        }
-
         .topring-list li {
-            width: 50%;
+            width: 90%;
+            margin: 0 auto;
+            height: 50vh;
         }
 
         /* playing */
