@@ -332,11 +332,11 @@ table {
     border-collapse: collapse;
     width: 70%;
     margin: 0 auto;
+    font-size: 1.1em;
 }
 
 th,
 td {
-    font-size: 1.1em;
     text-align: left;
     padding: 8px 0;
 }
@@ -463,8 +463,15 @@ tr:nth-child(even) {
     }
 
     /* cat-list */
-    .cat-list li {
+    .cat-list {
         width: 100%;
+        height: auto;
+    }
+    .cat-list li {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .6em;
+        text-indent: 10px;
     }
 
     /* Top ring */
@@ -482,10 +489,10 @@ tr:nth-child(even) {
     .play-item {
         gap: 0.4em;
     }
-
-    .hot-list li {
-        gap: 1em;
+    table {
+        font-size: .9em;
     }
+
 
     /* best-list */
 
